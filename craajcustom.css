@@ -64,22 +64,3 @@ input:checked + .toggle-slider:before {
 }
 
 
-
-
-#block-1699916941256 .form .form-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-#block-1699916941256 .form .form-group .text-field {
-    width: 48%; /* Adjust this value as needed for spacing */
-}
-
-/* Specific targeting for Name and Surname fields */
-#form_submission_name,
-#form_submission_custom_15 {
-    width: 100%; /* Full width inside their respective .text-field containers */
-}
-
-
