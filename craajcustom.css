@@ -67,6 +67,8 @@ input:checked + .toggle-slider:before {
 
 
 
+/* CUSTOM CSS FOR TESTIMONIAL BOXES */
+
 /* Set the text box's parent to relative positioning */
 .block-type--feature .feature__text {
     position: relative;
@@ -74,8 +76,6 @@ input:checked + .toggle-slider:before {
 
 
 
-
-/* CUSTOM CSS FOR TESTIMONIAL BOXES */
 /* Style for the close button */
 .close-btn {
     cursor: pointer;
