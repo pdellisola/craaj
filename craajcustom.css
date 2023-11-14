@@ -10,18 +10,14 @@
     cursor: pointer;
     border: 1px solid #080400;
     border-radius: 30px;
-    background-color: #080400;
-    color: #ffffff;
+    background-color: #080400; /* Black background */
+    color: #ffffff; /* White text */
     transition: background-color 0.3s ease;
 }
 
-.coach-option-button:hover {
-    background-color: #333333; /* Slightly lighter black for hover effect */
-}
-
 .selected-button {
-    background-color: #ffffff;
-    color: #080400;
+    background-color: #ffffff; /* White background */
+    color: #080400; /* Black text */
 }
 
 #block-1699916884056, #block-1699916941256 {
@@ -30,10 +26,6 @@
 
 /* Add any other necessary CSS for your page */
 
-
-
-
-/* Any other existing CSS rules that are still relevant to your site should remain here */
 
 
 
