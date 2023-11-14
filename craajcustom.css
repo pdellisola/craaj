@@ -69,15 +69,15 @@ input:checked + .toggle-slider:before {
 
 /* Targeting the container of the form fields */
 #block-1699916941256 .form .form-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
 }
 
 /* Targeting the individual form fields (Name and Surname) */
 #block-1699916941256 .form .form-group .text-field {
-    flex-basis: 48%; /* Adjust this value as needed for spacing */
-    max-width: 48%; /* Ensures that it doesn't grow beyond the specified width */
+    flex-basis: 48% !important; /* Adjust this value as needed for spacing */
+    max-width: 48% !important; /* Ensures that it doesn't grow beyond the specified width */
 }
 
 /* Adjustments for mobile view 
