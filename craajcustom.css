@@ -80,10 +80,11 @@ input:checked + .toggle-slider:before {
     max-width: 48%; /* Ensures that it doesn't grow beyond the specified width */
 }
 
-/* Adjustments for mobile view */
+/* Adjustments for mobile view 
 @media (max-width: 767px) {
     #block-1699916941256 .form .form-group .text-field {
         flex-basis: 100%;
         max-width: 100%;
     }
 }
+*/
