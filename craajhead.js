@@ -28,3 +28,49 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+
+
+
+
+//Function for the testimonial boxes on homepage
+document.addEventListener("DOMContentLoaded", function() {
+    var readMoreLinks = document.querySelectorAll('.read-more-link');
+
+    readMoreLinks.forEach(function(link) {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            var testimonialBlock = link.closest('.testimonial-block');
+            var fullText = testimonialBlock.querySelector('.full-text');
+            var shortText = testimonialBlock.querySelector('.short-text');
+
+            // Expand the text and show 'X' button
+            shortText.style.display = 'none';
+            fullText.style.display = 'block';
+            createCloseButton(testimonialBlock);
+        });
+    });
+
+    function createCloseButton(block) {
+        var closeBtn = document.createElement('span');
+        closeBtn.textContent = 'X';
+        closeBtn.classList.add('close-btn');
+        closeBtn.style.position = 'absolute';
+        closeBtn.style.top = '5px';
+        closeBtn.style.right = '10px';
+        closeBtn.style.cursor = 'pointer';
+
+        closeBtn.addEventListener('click', function() {
+            var fullText = block.querySelector('.full-text');
+            var shortText = block.querySelector('.short-text');
+
+            // Collapse the text and remove 'X' button
+            fullText.style.display = 'none';
+            shortText.style.display = 'block';
+            block.removeChild(closeBtn);
+        });
+
+        block.appendChild(closeBtn);
+    }
+});
