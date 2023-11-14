@@ -66,25 +66,20 @@ input:checked + .toggle-slider:before {
 
 
 
-
-/* Targeting the container of the form fields */
 #block-1699916941256 .form .form-group {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: space-between !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-/* Targeting the individual form fields (Name and Surname) */
 #block-1699916941256 .form .form-group .text-field {
-    flex-basis: 48% !important; /* Adjust this value as needed for spacing */
-    max-width: 48% !important; /* Ensures that it doesn't grow beyond the specified width */
+    width: 48%; /* Adjust this value as needed for spacing */
 }
 
-/* Adjustments for mobile view 
-@media (max-width: 767px) {
-    #block-1699916941256 .form .form-group .text-field {
-        flex-basis: 100%;
-        max-width: 100%;
-    }
+/* Specific targeting for Name and Surname fields */
+#form_submission_name,
+#form_submission_custom_15 {
+    width: 100%; /* Full width inside their respective .text-field containers */
 }
-*/
+
+
