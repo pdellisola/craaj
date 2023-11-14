@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 //Function for the testimonial boxes on homepage
 document.addEventListener("DOMContentLoaded", function() {
+    // Functionality for the testimonial boxes on the homepage
     var readMoreLinks = document.querySelectorAll('.read-more-link');
 
     readMoreLinks.forEach(function(link) {
@@ -45,12 +46,22 @@ document.addEventListener("DOMContentLoaded", function() {
             var fullText = testimonialBlock.querySelector('.full-text');
             var shortText = testimonialBlock.querySelector('.short-text');
 
-            // Expand the text and show 'X' button
-            shortText.style.display = 'none';
-            fullText.style.display = 'block';
-            createCloseButton(testimonialBlock);
+            // Toggle visibility of full text and short text
+            fullText.style.display = fullText.style.display === 'none' ? 'block' : 'none';
+            shortText.style.display = shortText.style.display === 'none' ? 'block' : 'none';
+            // Update the 'X' button's visibility
+            updateCloseButtonVisibility(testimonialBlock);
         });
     });
+
+    function updateCloseButtonVisibility(block) {
+        var closeBtn = block.querySelector('.close-btn');
+        if (!closeBtn) {
+            createCloseButton(block);
+        } else {
+            block.removeChild(closeBtn);
+        }
+    }
 
     function createCloseButton(block) {
         var closeBtn = document.createElement('span');
