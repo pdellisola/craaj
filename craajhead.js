@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
 //Function for the testimonial boxes on homepage
 document.addEventListener("DOMContentLoaded", function() {
     // Functionality for the testimonial boxes on the homepage
