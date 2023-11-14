@@ -18,11 +18,15 @@ document.addEventListener("DOMContentLoaded", function() {
     yesCoachBtn.addEventListener('click', function() {
         coachForm.style.display = 'block';
         nonCoachForm.style.display = 'none';
+        this.classList.add('selected-button');
+        noCoachBtn.classList.remove('selected-button');
     });
 
     noCoachBtn.addEventListener('click', function() {
         coachForm.style.display = 'none';
         nonCoachForm.style.display = 'block';
+        this.classList.add('selected-button');
+        yesCoachBtn.classList.remove('selected-button');
     });
 });
 
