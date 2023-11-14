@@ -17,6 +17,11 @@
 .coach-option-button:hover {
     background-color: #eee;
 }
+#block-1699916884056, #block-1699916941256 {
+    display: none;
+}
+
+
 
 /* Any other existing CSS rules that are still relevant to your site should remain here */
 
