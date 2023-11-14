@@ -12,19 +12,19 @@ document.addEventListener("DOMContentLoaded", function() {
     var nonCoachForm = document.getElementById('block-1699916941256');
 
     // Set initial visibility of forms (non-coach form visible, coach form hidden)
-    coachForm.style.display = 'none';
-    nonCoachForm.style.display = 'block';
+    coachForm.style.display = 'none'; // Hide coach form
+    nonCoachForm.style.display = 'block'; // Show non-coach form
 
     // Add event listener to the toggle switch
     coachToggle.addEventListener('change', function() {
         if (this.checked) {
             // If toggle is set to 'I'm a coach'
-            coachForm.style.display = 'block';
-            nonCoachForm.style.display = 'none';
+            coachForm.style.display = 'block'; // Show coach form
+            nonCoachForm.style.display = 'none'; // Hide non-coach form
         } else {
             // If toggle is set to 'I'm not a coach'
-            coachForm.style.display = 'none';
-            nonCoachForm.style.display = 'block';
+            coachForm.style.display = 'none'; // Hide coach form
+            nonCoachForm.style.display = 'block'; // Show non-coach form
         }
     });
 });
