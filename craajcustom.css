@@ -64,3 +64,34 @@ input:checked + .toggle-slider:before {
 }
 
 
+
+
+
+/* Set the text box's parent to relative positioning */
+.block-type--feature .feature__text {
+    position: relative;
+}
+
+
+
+
+/* CUSTOM CSS FOR TESTIMONIAL BOXES */
+/* Style for the close button */
+.close-btn {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 24px;
+    font-weight: bold;
+    z-index: 10; /* Ensure it's above other elements */
+}
+.read-more-link {
+    color: inherit; /* Inherits color from the parent element */
+    text-decoration: underline; /* Optional, for a link-like appearance */
+    cursor: pointer;
+}
+/* END OF CUSTOM CSS FOR TESTIMONIAL BOXES */
+
+
+
