@@ -8,18 +8,28 @@
     margin: 10px;
     font-size: 16px;
     cursor: pointer;
-    border: 1px solid #ccc;
-    background-color: #fff;
-    border-radius: 5px;
+    border: 1px solid #080400;
+    border-radius: 30px;
+    background-color: #080400;
+    color: #ffffff;
     transition: background-color 0.3s ease;
 }
 
 .coach-option-button:hover {
-    background-color: #eee;
+    background-color: #333333; /* Slightly lighter black for hover effect */
 }
+
+.selected-button {
+    background-color: #ffffff;
+    color: #080400;
+}
+
 #block-1699916884056, #block-1699916941256 {
     display: none;
 }
+
+/* Add any other necessary CSS for your page */
+
 
 
 
