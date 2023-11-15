@@ -51,7 +51,7 @@ function hideMenuItems() {
 
 
 
-/*
+
 function toggleForms() {
     var coachForm = document.getElementById('block-1699916884056');
     var nonCoachForm = document.getElementById('block-1699916941256');
@@ -76,7 +76,7 @@ function toggleForms() {
         this.classList.add('selected-button');
         yesCoachBtn.classList.remove('selected-button');
     });
-} */
+} 
 
 
 
