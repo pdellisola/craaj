@@ -10,9 +10,10 @@ function hideMenuItems() {
         registrationMenuItem.parentElement.style.display = 'none';
     }
 
-    // New selector targeting the Member Directory menu item
+   // Check for the presence of 'section.member-directory' to hide the Member Directory menu item
+    var memberDirectorySection = document.querySelector('section.member-directory');
     var memberDirectoryMenuItem = document.querySelector('div.link-list__links a.link-list__link[href="https://www.craaj.com/member_dashboard/members"]');
-    if (window.location.href.includes('member_dashboard/') && memberDirectoryMenuItem) {
+    if (memberDirectorySection && memberDirectoryMenuItem) {
         memberDirectoryMenuItem.style.display = 'none';
     }
 }
