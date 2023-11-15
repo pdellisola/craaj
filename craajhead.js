@@ -1,25 +1,34 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Group for hiding menu items
-    hideMenuItems();
+    console.log('DOM fully loaded and parsed');
+
+    // Try to hide the menu items after a delay to ensure they are loaded
+    setTimeout(hideMenuItems, 500); // Adjust the delay as necessary
 
     // Group for form toggling
     toggleForms();
 });
 
 function hideMenuItems() {
-    // Existing code to hide registration form link
+    console.log('Running hideMenuItems function');
+
+    // Hide registration form link
     var menuItemToHide = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
     var userAvatar = document.querySelector('.user__avatar');
     if (userAvatar && menuItemToHide) {
         menuItemToHide.parentElement.style.display = 'none';
+        console.log('Hid registration form link');
     }
 
-    // Revised code to hide Member Directory menu item if URL contains 'member_dashboard/'
+    // Hide Member Directory menu item if URL contains 'member_dashboard/'
     var memberDirectoryMenuItem = document.querySelector('a[href*="member_dashboard/members"]');
+    console.log('Member Directory Menu Item:', memberDirectoryMenuItem);
     if (window.location.href.indexOf('member_dashboard/') > -1 && memberDirectoryMenuItem) {
         memberDirectoryMenuItem.style.display = 'none';
+        console.log('Hid Member Directory menu item');
     }
 }
+
+
 
 function toggleForms() {
     var coachForm = document.getElementById('block-1699916884056');
