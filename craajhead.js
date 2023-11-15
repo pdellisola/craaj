@@ -11,7 +11,7 @@ function hideMenuItems() {
     }
 
     // New selector targeting the Member Directory menu item
-    var memberDirectoryMenuItem = document.querySelector('div.link-list__links a.link-list__link[href*="member_dashboard/members"]');
+    var memberDirectoryMenuItem = document.querySelector('div.link-list__links a.link-list__link[href="https://www.craaj.com/member_dashboard/members"]');
     if (window.location.href.includes('member_dashboard/') && memberDirectoryMenuItem) {
         memberDirectoryMenuItem.style.display = 'none';
     }
