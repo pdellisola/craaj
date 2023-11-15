@@ -1,8 +1,13 @@
 document.addEventListener("DOMContentLoaded", function() {
-/*    restrictPodcastPageAccess(); */
+    /*    restrictPodcastPageAccess(); */
     hideMenuItems();
     toggleForms();
+    setUpClosePopupListener(); // Adding the new function call here
 });
+
+
+
+
 
 /* function restrictPodcastPageAccess() {
     // Check if the current page is the podcast page
@@ -45,12 +50,6 @@ function hideMenuItems() {
     }
 }
 
-function toggleForms() {
-    // ... rest of the toggleForms function ...
-}
-
-
-
 
 
 
@@ -80,8 +79,26 @@ function toggleForms() {
     });
 }
 
+// Function to reset the state of the forms and buttons - added as a separate function
+function resetPopupState() {
+    var coachForm = document.getElementById('block-1699916884056');
+    var nonCoachForm = document.getElementById('block-1699916941256');
+    var yesCoachBtn = document.getElementById('yesCoach');
+    var noCoachBtn = document.getElementById('noCoach');
 
+    coachForm.style.display = 'none';
+    nonCoachForm.style.display = 'none';
+    yesCoachBtn.classList.remove('selected-button');
+    noCoachBtn.classList.remove('selected-button');
+}
 
+// Function to set up event listener for the popup close button - added as a separate function
+function setUpClosePopupListener() {
+    var closeButton = document.querySelector('.close-x__part');
+    if (closeButton) {
+        closeButton.addEventListener('click', resetPopupState);
+    }
+}
 
 
 
