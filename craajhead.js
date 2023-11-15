@@ -51,7 +51,7 @@ function hideMenuItems() {
 
 
 
-
+/*
 function toggleForms() {
     var coachForm = document.getElementById('block-1699916884056');
     var nonCoachForm = document.getElementById('block-1699916941256');
@@ -76,10 +76,47 @@ function toggleForms() {
         this.classList.add('selected-button');
         yesCoachBtn.classList.remove('selected-button');
     });
+} */
+
+
+
+function toggleForms() {
+    // Website pages forms
+    var coachForm = document.getElementById('block-1699916884056');
+    var nonCoachForm = document.getElementById('block-1699916941256');
+
+    // Registration landing page forms
+    var registrationCoachForm = document.getElementById('block-1700083222628');
+    var registrationNonCoachForm = document.getElementById('block-1700082963385');
+
+    var yesCoachBtn = document.getElementById('yesCoach');
+    var noCoachBtn = document.getElementById('noCoach');
+
+    // Hide both forms initially
+    coachForm.style.display = 'none';
+    nonCoachForm.style.display = 'none';
+    registrationCoachForm.style.display = 'none';
+    registrationNonCoachForm.style.display = 'none';
+
+    // Event listeners for buttons
+    yesCoachBtn.addEventListener('click', function() {
+        coachForm.style.display = 'block';
+        nonCoachForm.style.display = 'none';
+        registrationCoachForm.style.display = 'block';
+        registrationNonCoachForm.style.display = 'none';
+        this.classList.add('selected-button');
+        noCoachBtn.classList.remove('selected-button');
+    });
+
+    noCoachBtn.addEventListener('click', function() {
+        coachForm.style.display = 'none';
+        nonCoachForm.style.display = 'block';
+        registrationCoachForm.style.display = 'none';
+        registrationNonCoachForm.style.display = 'block';
+        this.classList.add('selected-button');
+        yesCoachBtn.classList.remove('selected-button');
+    });
 } 
-
-
-
 
 
 
