@@ -3,11 +3,8 @@ document.addEventListener("DOMContentLoaded", function() {
     hideMenuItems();
     toggleForms();
     setUpClosePopupListener(); // Adding the new function call here
+    setUpPollingForPopupClosure(); // Polling mechanism for resetting the popup
 });
-
-
-
-
 
 /* function restrictPodcastPageAccess() {
     // Check if the current page is the podcast page
@@ -21,9 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 }
 */
-
-
-
 
 function hideMenuItems() {
     var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
@@ -49,9 +43,6 @@ function hideMenuItems() {
         memberDirectoryMenuItem.style.display = 'none';
     }
 }
-
-
-
 
 function toggleForms() {
     var coachForm = document.getElementById('block-1699916884056');
@@ -79,18 +70,6 @@ function toggleForms() {
     });
 }
 
-
-
-    // Set up event delegation for the popup close button
-    document.body.addEventListener('click', function(event) {
-        // Check if the clicked element or its parent has the class 'close-x__part'
-        if (event.target.classList.contains('close-x__part') || event.target.parentElement.classList.contains('close-x__part')) {
-            resetPopupState();
-        }
-    });
-});
-
-
 // Function to reset the state of the forms and buttons - added as a separate function
 function resetPopupState() {
     var coachForm = document.getElementById('block-1699916884056');
@@ -112,13 +91,22 @@ function setUpClosePopupListener() {
     }
 }
 
+// Function to set up polling for popup closure
+function setUpPollingForPopupClosure() {
+    // Replace '.popup-selector' with the actual selector of your popup
+    var popupSelector = '.popup-selector';
+    var wasPopupVisible = false;
 
+    setInterval(function() {
+        var popup = document.querySelector(popupSelector);
+        var isPopupCurrentlyVisible = popup && getComputedStyle(popup).display !== 'none';
 
-
-
-
-
-
+        if (wasPopupVisible && !isPopupCurrentlyVisible) {
+            resetPopupState();
+        }
+        wasPopupVisible = isPopupCurrentlyVisible;
+    }, 500); // Check every 500 milliseconds
+}
 
 //Function for the testimonial boxes on homepage
 document.addEventListener("DOMContentLoaded", function() {
