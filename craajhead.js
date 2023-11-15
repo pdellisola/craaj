@@ -6,8 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
 function hideMenuItems() {
     var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
     var userAvatar = document.querySelector('.user__avatar');
+    var becomeMemberButton = document.querySelector('a.btn[href="#two-step"]');
+
+    // Hide registration form link if user is logged in
     if (userAvatar && registrationMenuItem) {
         registrationMenuItem.parentElement.style.display = 'none';
+    }
+
+    // Hide 'Become a Member' button if user is logged in
+    if (userAvatar && becomeMemberButton) {
+        becomeMemberButton.style.display = 'none';
     }
 
     // Check for the presence of 'section.member-directory' or the specific span to hide the Member Directory menu item
