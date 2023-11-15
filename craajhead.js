@@ -79,6 +79,18 @@ function toggleForms() {
     });
 }
 
+
+
+    // Set up event delegation for the popup close button
+    document.body.addEventListener('click', function(event) {
+        // Check if the clicked element or its parent has the class 'close-x__part'
+        if (event.target.classList.contains('close-x__part') || event.target.parentElement.classList.contains('close-x__part')) {
+            resetPopupState();
+        }
+    });
+});
+
+
 // Function to reset the state of the forms and buttons - added as a separate function
 function resetPopupState() {
     var coachForm = document.getElementById('block-1699916884056');
