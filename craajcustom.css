@@ -19,11 +19,14 @@
     background-color: #ffffff !important; /* White background */
     color: #080400 !important; /* Black text */
 }
-
+/*two-step pop-up forms on website pages*/
 #block-1699916884056, #block-1699916941256 {
     display: none;
 }
-
+/*Registration landing page */
+#block-1700082963385, #block-1700082963385 {
+    display: none;
+}
 
 /* Add any other necessary CSS for you r page */
 
