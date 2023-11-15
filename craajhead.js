@@ -45,6 +45,12 @@ function hideMenuItems() {
     }
 }
 
+function toggleForms() {
+    // ... rest of the toggleForms function ...
+}
+
+
+
 
 
 
