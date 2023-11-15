@@ -1,9 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
-    /*    restrictPodcastPageAccess(); */
+/*    restrictPodcastPageAccess(); */
     hideMenuItems();
     toggleForms();
-    setUpClosePopupListener(); // Adding the new function call here
-    setUpPollingForPopupClosure(); // Polling mechanism for resetting the popup
 });
 
 /* function restrictPodcastPageAccess() {
@@ -18,6 +16,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 }
 */
+
+
+
 
 function hideMenuItems() {
     var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
@@ -43,6 +44,9 @@ function hideMenuItems() {
         memberDirectoryMenuItem.style.display = 'none';
     }
 }
+
+
+
 
 function toggleForms() {
     var coachForm = document.getElementById('block-1699916884056');
@@ -70,43 +74,12 @@ function toggleForms() {
     });
 }
 
-// Function to reset the state of the forms and buttons - added as a separate function
-function resetPopupState() {
-    var coachForm = document.getElementById('block-1699916884056');
-    var nonCoachForm = document.getElementById('block-1699916941256');
-    var yesCoachBtn = document.getElementById('yesCoach');
-    var noCoachBtn = document.getElementById('noCoach');
 
-    coachForm.style.display = 'none';
-    nonCoachForm.style.display = 'none';
-    yesCoachBtn.classList.remove('selected-button');
-    noCoachBtn.classList.remove('selected-button');
-}
 
-// Function to set up event listener for the popup close button - added as a separate function
-function setUpClosePopupListener() {
-    var closeButton = document.querySelector('.close-x__part');
-    if (closeButton) {
-        closeButton.addEventListener('click', resetPopupState);
-    }
-}
 
-// Function to set up polling for popup closure
-function setUpPollingForPopupClosure() {
-    // Replace '.popup-selector' with the actual selector of your popup
-    var popupSelector = '.popup-selector';
-    var wasPopupVisible = false;
 
-    setInterval(function() {
-        var popup = document.querySelector(popupSelector);
-        var isPopupCurrentlyVisible = popup && getComputedStyle(popup).display !== 'none';
 
-        if (wasPopupVisible && !isPopupCurrentlyVisible) {
-            resetPopupState();
-        }
-        wasPopupVisible = isPopupCurrentlyVisible;
-    }, 500); // Check every 500 milliseconds
-}
+
 
 //Function for the testimonial boxes on homepage
 document.addEventListener("DOMContentLoaded", function() {
