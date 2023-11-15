@@ -1,10 +1,27 @@
 document.addEventListener("DOMContentLoaded", function() {
+    // Group for hiding menu items
+    hideMenuItems();
+
+    // Group for form toggling
+    toggleForms();
+});
+
+function hideMenuItems() {
+    // Existing code to hide registration form link
     var menuItemToHide = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
     var userAvatar = document.querySelector('.user__avatar');
     if (userAvatar && menuItemToHide) {
         menuItemToHide.parentElement.style.display = 'none';
     }
 
+    // Code to hide Member Directory menu item if URL contains 'member_dashboard/'
+    var memberDirectoryMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/member_dashboard/members"]');
+    if (window.location.href.includes('member_dashboard/') && memberDirectoryMenuItem) {
+        memberDirectoryMenuItem.parentElement.style.display = 'none';
+    }
+}
+
+function toggleForms() {
     var coachForm = document.getElementById('block-1699916884056');
     var nonCoachForm = document.getElementById('block-1699916941256');
     var yesCoachBtn = document.getElementById('yesCoach');
@@ -28,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
         this.classList.add('selected-button');
         yesCoachBtn.classList.remove('selected-button');
     });
-});
+}
 
 
 
