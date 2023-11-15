@@ -79,45 +79,14 @@ function toggleForms() {
 } */
 
 
-function toggleForms() {
-    // "Website pages pop-up forms" IDs
-    var websiteCoachForm = document.getElementById('block-1699916884056');
-    var websiteNonCoachForm = document.getElementById('block-1699916941256');
 
-    // "Registration landing page forms" IDs
-    var registrationCoachForm = document.getElementById('block-1700082963386');
-    var registrationNonCoachForm = document.getElementById('block-1700082963385');
 
-    var yesCoachBtn = document.getElementById('yesCoach');
-    var noCoachBtn = document.getElementById('noCoach');
 
-    // Event listeners for buttons
-    yesCoachBtn.addEventListener('click', function() {
-        if (websiteCoachForm && websiteNonCoachForm) {
-            websiteCoachForm.style.display = 'block';
-            websiteNonCoachForm.style.display = 'none';
-        }
-        if (registrationCoachForm && registrationNonCoachForm) {
-            registrationCoachForm.style.display = 'block';
-            registrationNonCoachForm.style.display = 'none';
-        }
-        this.classList.add('selected-button');
-        noCoachBtn.classList.remove('selected-button');
-    });
 
-    noCoachBtn.addEventListener('click', function() {
-        if (websiteCoachForm && websiteNonCoachForm) {
-            websiteCoachForm.style.display = 'none';
-            websiteNonCoachForm.style.display = 'block';
-        }
-        if (registrationCoachForm && registrationNonCoachForm) {
-            registrationCoachForm.style.display = 'none';
-            registrationNonCoachForm.style.display = 'block';
-        }
-        this.classList.add('selected-button');
-        yesCoachBtn.classList.remove('selected-button');
-    });
-}
+
+
+
+
 
 
 
