@@ -14,10 +14,10 @@ function hideMenuItems() {
         menuItemToHide.parentElement.style.display = 'none';
     }
 
-    // Code to hide Member Directory menu item if URL contains 'member_dashboard/'
-    var memberDirectoryMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/member_dashboard/members"]');
-    if (window.location.href.includes('member_dashboard/') && memberDirectoryMenuItem) {
-        memberDirectoryMenuItem.parentElement.style.display = 'none';
+    // Revised code to hide Member Directory menu item if URL contains 'member_dashboard/'
+    var memberDirectoryMenuItem = document.querySelector('a[href*="member_dashboard/members"]');
+    if (window.location.href.indexOf('member_dashboard/') > -1 && memberDirectoryMenuItem) {
+        memberDirectoryMenuItem.style.display = 'none';
     }
 }
 
@@ -46,6 +46,7 @@ function toggleForms() {
         yesCoachBtn.classList.remove('selected-button');
     });
 }
+
 
 
 
