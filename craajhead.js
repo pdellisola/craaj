@@ -1,7 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
+    restrictPodcastPageAccess();
     hideMenuItems();
     toggleForms();
 });
+
+function restrictPodcastPageAccess() {
+    // Check if the current page is the podcast page
+    if (window.location.href.includes('/podcasts/c-raaj-podcasts')) {
+        var userAvatar = document.querySelector('.user__avatar');
+
+        // If the user avatar is not present (user not logged in), redirect to the registration form
+        if (!userAvatar) {
+            window.location.href = '/registration-form';
+        }
+    }
+}
+
+
+
+
+
 
 function hideMenuItems() {
     var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
