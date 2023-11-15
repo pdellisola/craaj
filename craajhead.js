@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
-/*    restrictPodcastPageAccess(); */
+    /*    restrictPodcastPageAccess(); */
     hideMenuItems();
     toggleForms();
 });
+
+
+
+
 
 /* function restrictPodcastPageAccess() {
     // Check if the current page is the podcast page
@@ -45,12 +49,6 @@ function hideMenuItems() {
     }
 }
 
-function toggleForms() {
-    // ... rest of the toggleForms function ...
-}
-
-
-
 
 
 
@@ -79,7 +77,6 @@ function toggleForms() {
         yesCoachBtn.classList.remove('selected-button');
     });
 }
-
 
 
 
