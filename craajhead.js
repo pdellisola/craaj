@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    restrictPodcastPageAccess();
+/*    restrictPodcastPageAccess(); */
     hideMenuItems();
     toggleForms();
 });
 
-function restrictPodcastPageAccess() {
+/* function restrictPodcastPageAccess() {
     // Check if the current page is the podcast page
     if (window.location.href.includes('/podcasts/c-raaj-podcasts')) {
         var userAvatar = document.querySelector('.user__avatar');
@@ -15,8 +15,7 @@ function restrictPodcastPageAccess() {
         }
     }
 }
-
-
+*/
 
 
 
