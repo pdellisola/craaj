@@ -77,55 +77,48 @@ function toggleForms() {
         yesCoachBtn.classList.remove('selected-button');
     });
 } */
-function toggleForms() {
-    // Original form IDs
-    var originalCoachForm = document.getElementById('block-1699916884056');
-    var originalNonCoachForm = document.getElementById('block-1699916941256');
 
-    // New form IDs
-    var newCoachForm = document.getElementById('block-1700082963386');
-    var newNonCoachForm = document.getElementById('block-1700082963385');
+
+function toggleForms() {
+    // "Website pages pop-up forms" IDs
+    var websiteCoachForm = document.getElementById('block-1699916884056');
+    var websiteNonCoachForm = document.getElementById('block-1699916941256');
+
+    // "Registration landing page forms" IDs
+    var registrationCoachForm = document.getElementById('block-1700082963386');
+    var registrationNonCoachForm = document.getElementById('block-1700082963385');
 
     var yesCoachBtn = document.getElementById('yesCoach');
     var noCoachBtn = document.getElementById('noCoach');
 
-    // Hide both sets of forms initially
-    if (originalCoachForm && originalNonCoachForm) {
-        originalCoachForm.style.display = 'none';
-        originalNonCoachForm.style.display = 'none';
-    }
-    if (newCoachForm && newNonCoachForm) {
-        newCoachForm.style.display = 'none';
-        newNonCoachForm.style.display = 'none';
-    }
-
     // Event listeners for buttons
     yesCoachBtn.addEventListener('click', function() {
-        if (originalCoachForm && originalNonCoachForm) {
-            originalCoachForm.style.display = 'block';
-            originalNonCoachForm.style.display = 'none';
+        if (websiteCoachForm && websiteNonCoachForm) {
+            websiteCoachForm.style.display = 'block';
+            websiteNonCoachForm.style.display = 'none';
         }
-        if (newCoachForm && newNonCoachForm) {
-            newCoachForm.style.display = 'block';
-            newNonCoachForm.style.display = 'none';
+        if (registrationCoachForm && registrationNonCoachForm) {
+            registrationCoachForm.style.display = 'block';
+            registrationNonCoachForm.style.display = 'none';
         }
         this.classList.add('selected-button');
         noCoachBtn.classList.remove('selected-button');
     });
 
     noCoachBtn.addEventListener('click', function() {
-        if (originalCoachForm && originalNonCoachForm) {
-            originalCoachForm.style.display = 'none';
-            originalNonCoachForm.style.display = 'block';
+        if (websiteCoachForm && websiteNonCoachForm) {
+            websiteCoachForm.style.display = 'none';
+            websiteNonCoachForm.style.display = 'block';
         }
-        if (newCoachForm && newNonCoachForm) {
-            newCoachForm.style.display = 'none';
-            newNonCoachForm.style.display = 'block';
+        if (registrationCoachForm && registrationNonCoachForm) {
+            registrationCoachForm.style.display = 'none';
+            registrationNonCoachForm.style.display = 'block';
         }
         this.classList.add('selected-button');
         yesCoachBtn.classList.remove('selected-button');
     });
 }
+
 
 
 
