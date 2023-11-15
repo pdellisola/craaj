@@ -1,32 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
-    console.log('DOM fully loaded and parsed');
-
-    // Try to hide the menu items after a delay to ensure they are loaded
-    setTimeout(hideMenuItems, 500); // Adjust the delay as necessary
-
-    // Group for form toggling
+    hideMenuItems();
     toggleForms();
 });
 
 function hideMenuItems() {
-    console.log('Running hideMenuItems function');
-
-    // Hide registration form link
-    var menuItemToHide = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
+    var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
     var userAvatar = document.querySelector('.user__avatar');
-    if (userAvatar && menuItemToHide) {
-        menuItemToHide.parentElement.style.display = 'none';
-        console.log('Hid registration form link');
+    if (userAvatar && registrationMenuItem) {
+        registrationMenuItem.parentElement.style.display = 'none';
     }
 
-    // Hide Member Directory menu item if URL contains 'member_dashboard/'
-    var memberDirectoryMenuItem = document.querySelector('a[href*="member_dashboard/members"]');
-    console.log('Member Directory Menu Item:', memberDirectoryMenuItem);
-    if (window.location.href.indexOf('member_dashboard/') > -1 && memberDirectoryMenuItem) {
+    // New selector targeting the Member Directory menu item
+    var memberDirectoryMenuItem = document.querySelector('div.link-list__links a.link-list__link[href*="member_dashboard/members"]');
+    if (window.location.href.includes('member_dashboard/') && memberDirectoryMenuItem) {
         memberDirectoryMenuItem.style.display = 'none';
-        console.log('Hid Member Directory menu item');
     }
 }
+
+
+
 
 
 
