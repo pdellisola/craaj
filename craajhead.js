@@ -10,13 +10,16 @@ function hideMenuItems() {
         registrationMenuItem.parentElement.style.display = 'none';
     }
 
-   // Check for the presence of 'section.member-directory' to hide the Member Directory menu item
+    // Check for the presence of 'section.member-directory' or the specific span to hide the Member Directory menu item
     var memberDirectorySection = document.querySelector('section.member-directory');
+    var memberDirectorySpan = document.getElementById('member-directory');
     var memberDirectoryMenuItem = document.querySelector('div.link-list__links a.link-list__link[href="https://www.craaj.com/member_dashboard/members"]');
-    if (memberDirectorySection && memberDirectoryMenuItem) {
+
+    if ((memberDirectorySection || memberDirectorySpan) && memberDirectoryMenuItem) {
         memberDirectoryMenuItem.style.display = 'none';
     }
 }
+
 
 
 
