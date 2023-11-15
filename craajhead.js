@@ -132,30 +132,26 @@ function toggleForms() {
     var yesCoachBtn = document.getElementById('yesCoach');
     var noCoachBtn = document.getElementById('noCoach');
 
+    function isFormVisible(form) {
+        return form && form.style.display === 'block';
+    }
+
     function toggleForm(formToShow, formToHide, buttonToSelect, otherButton) {
-        var isFormVisible = formToShow.style.display === 'block';
-        formToShow.style.display = isFormVisible ? 'none' : 'block';
+        var showForm = !isFormVisible(formToShow);
+        formToShow.style.display = showForm ? 'block' : 'none';
         formToHide.style.display = 'none';
-        buttonToSelect.classList.toggle('selected-button', !isFormVisible);
+        buttonToSelect.classList.toggle('selected-button', showForm);
         otherButton.classList.remove('selected-button');
     }
 
     yesCoachBtn.addEventListener('click', function() {
-        if (coachForm && nonCoachForm) {
-            toggleForm(coachForm, nonCoachForm, yesCoachBtn, noCoachBtn);
-        }
-        if (registrationCoachForm && registrationNonCoachForm) {
-            toggleForm(registrationCoachForm, registrationNonCoachForm, yesCoachBtn, noCoachBtn);
-        }
+        toggleForm(coachForm, nonCoachForm, yesCoachBtn, noCoachBtn);
+        toggleForm(registrationCoachForm, registrationNonCoachForm, yesCoachBtn, noCoachBtn);
     });
 
     noCoachBtn.addEventListener('click', function() {
-        if (coachForm && nonCoachForm) {
-            toggleForm(nonCoachForm, coachForm, noCoachBtn, yesCoachBtn);
-        }
-        if (registrationCoachForm && registrationNonCoachForm) {
-            toggleForm(registrationNonCoachForm, registrationCoachForm, noCoachBtn, yesCoachBtn);
-        }
+        toggleForm(nonCoachForm, coachForm, noCoachBtn, yesCoachBtn);
+        toggleForm(registrationNonCoachForm, registrationCoachForm, noCoachBtn, yesCoachBtn);
     });
 }
 
