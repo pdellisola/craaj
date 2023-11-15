@@ -79,7 +79,7 @@ function toggleForms() {
 } */
 
 
-
+/*
 function toggleForms() {
     // Website pages forms
     var coachForm = document.getElementById('block-1699916884056');
@@ -118,7 +118,47 @@ function toggleForms() {
         this.classList.add('selected-button');
         yesCoachBtn.classList.remove('selected-button');
     });
+} */
+
+function toggleForms() {
+    // Website pages forms
+    var coachForm = document.getElementById('block-1699916884056');
+    var nonCoachForm = document.getElementById('block-1699916941256');
+
+    // Registration landing page forms
+    var registrationCoachForm = document.getElementById('block-1700083222628');
+    var registrationNonCoachForm = document.getElementById('block-1700082963385');
+
+    var yesCoachBtn = document.getElementById('yesCoach');
+    var noCoachBtn = document.getElementById('noCoach');
+
+    function toggleForm(formToShow, formToHide, buttonToSelect, otherButton) {
+        var isFormVisible = formToShow.style.display === 'block';
+        formToShow.style.display = isFormVisible ? 'none' : 'block';
+        formToHide.style.display = 'none';
+        buttonToSelect.classList.toggle('selected-button', !isFormVisible);
+        otherButton.classList.remove('selected-button');
+    }
+
+    yesCoachBtn.addEventListener('click', function() {
+        if (coachForm && nonCoachForm) {
+            toggleForm(coachForm, nonCoachForm, yesCoachBtn, noCoachBtn);
+        }
+        if (registrationCoachForm && registrationNonCoachForm) {
+            toggleForm(registrationCoachForm, registrationNonCoachForm, yesCoachBtn, noCoachBtn);
+        }
+    });
+
+    noCoachBtn.addEventListener('click', function() {
+        if (coachForm && nonCoachForm) {
+            toggleForm(nonCoachForm, coachForm, noCoachBtn, yesCoachBtn);
+        }
+        if (registrationCoachForm && registrationNonCoachForm) {
+            toggleForm(registrationNonCoachForm, registrationCoachForm, noCoachBtn, yesCoachBtn);
+        }
+    });
 }
+
 
 
 
