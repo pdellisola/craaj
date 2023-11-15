@@ -8,10 +8,10 @@
     margin: 10px;
     font-size: 16px;
     cursor: pointer;
-    border: 1px solid #080400 !important;
+    border: 1px solid #080400;
     border-radius: 30px;
-    background-color: #080400 !important; /* Black background */
-    color: #ffffff !important; /* White text */
+    background-color: #080400; /* Black background */
+    color: #ffffff; /* White text */
     transition: background-color 0.3s ease;
 }
 
@@ -23,6 +23,7 @@
 #block-1699916884056, #block-1699916941256 {
     display: none;
 }
+
 
 /* Add any other necessary CSS for you r page */
 
