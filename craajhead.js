@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function hideMenuItems() {
-    var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration-form"]');
+    var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration"]');
     var userAvatar = document.querySelector('.user__avatar');
     var becomeMemberButton = document.querySelector('a.btn[href="#two-step"]');
 
