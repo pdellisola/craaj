@@ -59,6 +59,19 @@
     text-decoration: underline; /* Optional, for a link-like appearance */
     cursor: pointer;
 }
+
+
+
+
+
+.block-type--text {
+    position: relative;
+}
+
+.block-type--text .close-btn {
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+}
 /* END OF CUSTOM CSS FOR TESTIMONIAL BOXES */
 
 
