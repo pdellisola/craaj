@@ -228,10 +228,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
-
-
 //function to customize the form PHONE FIELD
+window.onload = function() {
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var phoneFieldContainers = document.querySelectorAll('.phone-field'); // Select all elements with the 'phone-field' class
 
