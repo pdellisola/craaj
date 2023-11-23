@@ -47,6 +47,13 @@ function hideMenuItems() {
     if ((memberDirectorySection || memberDirectorySpan) && memberDirectoryMenuItem) {
         memberDirectoryMenuItem.style.display = 'none';
     }
+
+
+        // Hide 'Library' menu item if on a page that contains '/library'
+    var libraryMenuItem = document.querySelector('a.link-list__link[href="https://www.craaj.com/library"]');
+    if (window.location.href.includes('/library') && libraryMenuItem) {
+        libraryMenuItem.style.display = 'none';
+    }
 }
 
 
