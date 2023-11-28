@@ -79,16 +79,16 @@
 
 
 .firstNameInput, .surnameInput {
-    display: inline-block;
-    width: 49%; /* Adjust as needed */
-    margin-right: 2%; /* Spacing between fields */
+    display: inline-block !important; 
+    width: 49% !important; /* Adjust as needed */
+    margin-right: 2% !important; /* Spacing between fields */
 }
 
 /* Optional: Adjustments for smaller screens */
 @media screen and (max-width: 600px) {
     .firstNameInput, .surnameInput {
-        width: 100%;
-        margin-right: 0;
+        width: 100% !important;
+        margin-right: 0 !important;
     }
 }
 
