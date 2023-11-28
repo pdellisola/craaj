@@ -81,44 +81,16 @@
 
 
 
-/* Adjust the container of the input fields if necessary */
-#form_submission_name_container { /* Replace with the actual ID or class of the container */
-    display: flex; /* This ensures that child elements are in a flex row */
-    justify-content: space-between; /* This spaces out the child elements evenly */
-}
-
 .firstNameInput, .surnameInput {
-    flex: 1; /* This makes both inputs take up equal space */
-    margin-right: 4px; /* Adjust as necessary, ensures a small gap between the inputs */
+    display: inline-block; /* Align side by side */
+    width: 49%; /* Half the width of the container */
+    margin-right: 1%; /* Small margin for spacing */
 }
 
-/* Optional: Adjustments for smaller screens */
+/* Adjust for smaller screens */
 @media screen and (max-width: 600px) {
     .firstNameInput, .surnameInput {
-        width: 100%;
+        width: 100%; /* Full width on small screens */
         margin-right: 0;
     }
 }
-
-
-/* Adjust the container of the input fields if necessary */
-#form_submission_name_container { /* Replace with the actual ID or class of the container */
-    display: flex; /* This ensures that child elements are in a flex row */
-    justify-content: space-between; /* This spaces out the child elements evenly */
-}
-
-
-.firstNameInput, .surnameInput {
-    display: inline-block !important; 
-    width: 49% !important; /* Adjust as needed */
-    margin-right: 2% !important; /* Spacing between fields */
-}
-
-/* Optional: Adjustments for smaller screens */
-@media screen and (max-width: 600px) {
-    .firstNameInput, .surnameInput {
-        width: 100% !important;
-        margin-right: 0 !important;
-    }
-}
-
