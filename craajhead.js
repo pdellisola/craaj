@@ -235,41 +235,41 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
-    // Wait for the entire DOM to load before executing the script
-    var nameField = document.getElementById('form_submission_name');
+    var nameFieldContainers = document.querySelectorAll('.form-control'); // Select all elements with the 'form-control' class that are type 'text'
 
-    if (!nameField) return; // Skip if no name input found
+    nameFieldContainers.forEach(function(container) {
+        if (container.type !== 'text' || container.placeholder !== 'Name') return; // Skip if not a text input or if the placeholder is not 'Name'
 
-    // Create new input fields for first name and surname
-    var firstNameInput = document.createElement('input');
-    firstNameInput.setAttribute('type', 'text');
-    firstNameInput.className = 'form-control firstNameInput';
-    firstNameInput.placeholder = 'First Name';
+        // Create new input fields for first name and surname
+        var firstNameInput = document.createElement('input');
+        firstNameInput.setAttribute('type', 'text');
+        firstNameInput.className = 'form-control firstNameInput';
+        firstNameInput.placeholder = 'First Name';
 
-    var surnameInput = document.createElement('input');
-    surnameInput.setAttribute('type', 'text');
-    surnameInput.className = 'form-control surnameInput';
-    surnameInput.placeholder = 'Surname';
+        var surnameInput = document.createElement('input');
+        surnameInput.setAttribute('type', 'text');
+        surnameInput.className = 'form-control surnameInput';
+        surnameInput.placeholder = 'Surname';
 
-    // Insert the new fields before the original name field
-    nameField.parentNode.insertBefore(firstNameInput, nameField);
-    nameField.parentNode.insertBefore(surnameInput, nameField);
+        // Insert the new fields before the original name field
+        container.parentNode.insertBefore(firstNameInput, container);
+        container.parentNode.insertBefore(surnameInput, container);
 
-    // Hide the original name field
-    nameField.style.display = 'none';
+        // Hide the original name field
+        container.style.display = 'none';
 
-    // Function to combine first name and surname
-    function combineName() {
-        var firstName = firstNameInput.value.trim();
-        var surname = surnameInput.value.trim();
-        if (firstName && surname) {
-            nameField.value = firstName + ' ' + surname;
+        // Function to combine first name and surname
+        function combineName() {
+            var firstName = firstNameInput.value.trim();
+            var surname = surnameInput.value.trim();
+            if (firstName && surname) {
+                container.value = firstName + ' ' + surname;
+            }
         }
-    }
 
-    // Event listeners to combine names on change
-    firstNameInput.addEventListener('change', combineName);
-    surnameInput.addEventListener('change', combineName);
+        // Event listeners to combine names on change
+        firstNameInput.addEventListener('change', combineName);
+        surnameInput.addEventListener('change', combineName);
+    });
 });
