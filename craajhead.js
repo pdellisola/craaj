@@ -233,3 +233,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var nameField = document.getElementById('form_submission_name');
+
+    if (!nameField) return; // Skip if no name input found
+
+    // Create new input fields for first name and surname
+    var firstNameInput = document.createElement('input');
+    firstNameInput.setAttribute('type', 'text');
+    firstNameInput.className = 'form-control firstNameInput';
+    firstNameInput.placeholder = 'First Name';
+
+    var surnameInput = document.createElement('input');
+    surnameInput.setAttribute('type', 'text');
+    surnameInput.className = 'form-control surnameInput';
+    surnameInput.placeholder = 'Surname';
+
+    // Insert the new fields before the original name field
+    nameField.parentNode.insertBefore(firstNameInput, nameField);
+    nameField.parentNode.insertBefore(surnameInput, nameField);
+
+    // Hide the original name field
+    nameField.style.display = 'none';
+
+    // Function to combine first name and surname
+    function combineName() {
+        var firstName = firstNameInput.value.trim();
+        var surname = surnameInput.value.trim();
+        if (firstName && surname) {
+            nameField.value = firstName + ' ' + surname;
+        }
+    }
+
+    // Event listeners to combine names on change
+    firstNameInput.addEventListener('change', combineName);
+    surnameInput.addEventListener('change', combineName);
+});
+
+
