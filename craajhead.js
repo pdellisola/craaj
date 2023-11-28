@@ -265,7 +265,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Create input field for the surname
             var surnameInput = document.createElement('input');
             surnameInput.type = 'text';
-            surnameInput.className = 'form-control';
+            surnameInput.className = 'form-control surname-subfield';
             surnameInput.placeholder = 'Surname'; // Adjust the placeholder text as needed
 
             // Insert the new fields before the original name field
