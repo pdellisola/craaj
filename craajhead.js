@@ -243,42 +243,70 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
-    var nameFields = document.querySelectorAll('input.form-control[type="text"][placeholder="Name"]'); // Select all text input elements with 'form-control' class and 'Name' placeholder
+    // Function to add first name and surname fields
+    function addNameSurnameFields() {
+        // Select all text type input elements with 'form-control' class and 'Name' placeholder
+        var nameFields = document.querySelectorAll('input.form-control[type="text"][placeholder="Name"]');
 
-    nameFields.forEach(function(nameField) {
-        // Create new input fields for first name and surname specific to this nameField
-        var firstNameInput = document.createElement('input');
-        firstNameInput.type = 'text';
-        firstNameInput.className = 'form-control firstNameInput';
-        firstNameInput.placeholder = 'First Name';
+        nameFields.forEach(function(nameField) {
+            // Check if the nameField has been already processed
+            if (nameField.getAttribute('data-processed') === 'true') return;
 
-        var surnameInput = document.createElement('input');
-        surnameInput.type = 'text';
-        surnameInput.className = 'form-control surnameInput';
-        surnameInput.placeholder = 'Surname';
+            // Mark the field as processed to avoid duplications
+            nameField.setAttribute('data-processed', 'true');
 
-        // Insert the new fields before the original name field
-        nameField.parentNode.insertBefore(firstNameInput, nameField);
-        nameField.parentNode.insertBefore(surnameInput, nameField);
+            // Create input field for the first name
+            var firstNameInput = document.createElement('input');
+            firstNameInput.type = 'text';
+            firstNameInput.className = 'form-control';
+            firstNameInput.placeholder = 'First Name'; // Adjust the placeholder text as needed
 
-        // Hide the original name field
-        nameField.style.display = 'none';
+            // Create input field for the surname
+            var surnameInput = document.createElement('input');
+            surnameInput.type = 'text';
+            surnameInput.className = 'form-control';
+            surnameInput.placeholder = 'Surname'; // Adjust the placeholder text as needed
 
-        // Function to combine first name and surname for this nameField
-        var combineName = function() {
-            var firstName = firstNameInput.value.trim();
-            var surname = surnameInput.value.trim();
-            if (firstName && surname) {
-                nameField.value = firstName + ' ' + surname;
+            // Insert the new fields before the original name field
+            nameField.parentNode.insertBefore(firstNameInput, nameField);
+            nameField.parentNode.insertBefore(surnameInput, nameField);
+
+            // Hide the original name field
+            nameField.style.visibility = 'hidden';
+            nameField.style.position = 'absolute';
+
+            // Combine the first name and surname into the original name field
+            function combineName() {
+                var firstName = firstNameInput.value.trim();
+                var surname = surnameInput.value.trim();
+                nameField.value = firstName && surname ? firstName + ' ' + surname : '';
             }
-        };
 
-        // Event listeners to combine names on change
-        firstNameInput.addEventListener('change', combineName);
-        surnameInput.addEventListener('change', combineName);
+            // Add event listeners to update the original name field
+            firstNameInput.addEventListener('input', combineName);
+            surnameInput.addEventListener('input', combineName);
+        });
+    }
+
+    // Initial invocation of the function
+    addNameSurnameFields();
+
+    // Instantiate a MutationObserver to handle dynamically added form fields
+    var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+                // Only run the function if a new element node has been added
+                if (node.nodeType === Node.ELEMENT_NODE) {
+                    addNameSurnameFields();
+                }
+            });
+        });
+    });
+
+    // Start observing the document body for added nodes
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
 });
-
-
