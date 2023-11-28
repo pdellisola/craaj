@@ -236,8 +236,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-
 document.addEventListener("DOMContentLoaded", function() {
+    // Wait for the entire DOM to load before executing the script
     var nameField = document.getElementById('form_submission_name');
 
     if (!nameField) return; // Skip if no name input found
@@ -273,5 +273,3 @@ document.addEventListener("DOMContentLoaded", function() {
     firstNameInput.addEventListener('change', combineName);
     surnameInput.addEventListener('change', combineName);
 });
-
-
