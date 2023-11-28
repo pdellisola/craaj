@@ -80,17 +80,3 @@
 
 
 
-
-.firstNameInput, .surnameInput {
-    display: inline-block; /* Align side by side */
-    width: 49%; /* Half the width of the container */
-    margin-right: 1%; /* Small margin for spacing */
-}
-
-/* Adjust for smaller screens */
-@media screen and (max-width: 600px) {
-    .firstNameInput, .surnameInput {
-        width: 100%; /* Full width on small screens */
-        margin-right: 0;
-    }
-}
