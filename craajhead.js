@@ -55,21 +55,15 @@ function hideMenuItems() {
         libraryMenuItem.style.display = 'none';
     }
 
-    // New code to hide specific divs on pages containing /sample
+    // Hide specific divs on pages containing /sample
     if (window.location.href.includes('/sample')) {
         var div1 = document.getElementById('block-1555988491313');
         var div2 = document.getElementById('block-1699412894617');
         var div3 = document.getElementById('block-1699412864848');
 
-        if (div1) {
-            div1.style.display = 'none';
-        }
-        if (div2) {
-            div2.style.display = 'none';
-        }
-        if (div3) {
-            div3.style.display = 'none';
-        }
+        if (div1) div1.style.display = 'none';
+        if (div2) div2.style.display = 'none';
+        if (div3) div3.style.display = 'none';
     }
 }
 
