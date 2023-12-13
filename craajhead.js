@@ -55,8 +55,8 @@ function hideMenuItems() {
         libraryMenuItem.style.display = 'none';
     }
 
-    // Hide specific divs on pages containing 'free-sample'
-    if (window.location.href.includes('free-sample')) {
+    // Hide specific divs on pages containing 'business-growth-bootcamp-for-coaches-free-sample'
+    if (window.location.href.includes('business-growth-bootcamp-for-coaches-free-sample')) {
         var div1 = document.getElementById('block-1555988491313');
         var div2 = document.getElementById('block-1699412894617');
         var div3 = document.getElementById('block-1699412864848');
