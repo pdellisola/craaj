@@ -56,15 +56,17 @@ function hideMenuItems() {
         libraryMenuItem.style.display = 'none';
     }
 
-    // Hide specific divs on pages containing 'business-growth-bootcamp-for-coaches-free-sample'
+  // Hide specific divs and show div#block-1702432443713 on pages containing 'business-growth-bootcamp-for-coaches-free-sample'
     if (window.location.href.includes('business-growth-bootcamp-for-coaches-free-sample')) {
         var div1 = document.getElementById('block-1555988491313');
         var div2 = document.getElementById('block-1699412894617');
         var div3 = document.getElementById('block-1699412864848');
+        var divToShow = document.getElementById('block-1702432443713');
 
         if (div1) div1.style.display = 'none';
         if (div2) div2.style.display = 'none';
         if (div3) div3.style.display = 'none';
+        if (divToShow) divToShow.style.display = 'block'; // or 'flex', 'inline-block', etc., depending on your layout
     }
 }
 
