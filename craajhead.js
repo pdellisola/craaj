@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
+setTimeout(hideMenuItems, 1000); // Waits for 1 second before executing
 function hideMenuItems() {
     var registrationMenuItem = document.querySelector('span.dropdown__item a[href="https://www.craaj.com/registration"]');
     var userAvatar = document.querySelector('.user__avatar');
